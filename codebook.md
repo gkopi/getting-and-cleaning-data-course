@@ -8,6 +8,7 @@ The explanation of these variables is largely based off the definitions provided
 
 ### The Data
 1) subject
+
 The person who performed the activities recorded. Labeled with IDs from 1-30.
 	 
 2) activity
