@@ -1,6 +1,5 @@
 library(dplyr)
 
-setwd("/Users/gabriel/Classes/CourseraDataScience/datasciencecoursera/GettingAndCleaningData")
 xtest = read.table("./Data/UCI HAR Dataset/test/X_test.txt")
 ytest = read.table("./Data/UCI HAR Dataset/test/y_test.txt")
 ytrain = read.table("./Data/UCI HAR Dataset/train/y_train.txt")
@@ -47,3 +46,5 @@ meansBySubjectAndActivity = desiredColumns %>% group_by(subject, activity) %>% s
 vNames = names(desiredColumns[3:81])
 meanVNames <- paste("mean of", vNames, sep=" ")
 names(meansBySubjectAndActivity) <- c("subject", "activity", meanVNames)
+
+write.table(meansBySubjectAndActivity, file="output.txt", row.name=FALSE)
